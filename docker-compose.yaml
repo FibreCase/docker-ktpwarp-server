@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  ktpwarp-server:
+    image: ktpwarp-server
+    container_name: ktpwarp-server
+    volumes:
+      - ./config.ts:/app/config.ts  # 将本地的 config.ts 挂载到容器内
+    ports:
+      - "{your_port}:{your_port}"  # 根据项目需求修改端口
+    restart: unless-stopped
